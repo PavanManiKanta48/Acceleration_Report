@@ -1,0 +1,44 @@
+-----Net Overview------
+ -.NET is a free, cross-platform, open source developer platform for building many different types of applications.
+ -With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more.
+
+Languages :
+ -C#,F#,VB.
+
+.NET Framework :
+  -It is the original implementation of .NET. It supports running websites, services, desktop apps, and more on Windows.
+Xamarin/Mono :
+  -Xamarin.Forms is an open source cross-platform UI framework from Microsoft for building iOS, Android, and Windows apps with
+  .NET from a single, shared codebase.
+
+Q. What can i build with .net?
+ -web, mobile, desktop, games, IoT, and more.
+
+Q. Who Build .net
+ -Microsoft.
+
+Libraries :
+ -To extend functionality, Microsoft and others maintain a healthy .NET package ecosystem.
+ -NuGet : is a package manager built specifically for .NET that contains over 100,000 packages.
+ - Libraries are in .Dll format we can call these libraries in other applications.
+
+----Net --------
+ 1.Net FrameWork 
+ 2.Net Core
+
+Q. What is .NET Framework?
+ -.NET Framework is a managed execution environment for Windows that provides a variety of services to its running apps.
+  It consists of two major components: 
+ 1.the common language runtime (CLR), which is the execution engine that handles running apps.
+ 2. .NET Framework Class Library, which provides a library of tested, reusable code that developers can call from their own apps.
+ 
+Dot Net Framework Main Objectives:
+ -Supports platform independent concepts
+ -Supports language independent concepts
+ -Supports language interoperability concepts
+ -Supports pure OOPs concepts
+ -Supports to work with databases with the help of ADO.NET
+ -Supports to develop game programming with the help of multi-threading
+ 
+ 
+
