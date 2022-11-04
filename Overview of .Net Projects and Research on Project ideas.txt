@@ -1,3 +1,4 @@
+02-11-2022
 -----Net Overview------
  -.NET is a free, cross-platform, open source developer platform for building many different types of applications.
  -With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more.
@@ -21,6 +22,8 @@ Libraries :
  -To extend functionality, Microsoft and others maintain a healthy .NET package ecosystem.
  -NuGet : is a package manager built specifically for .NET that contains over 100,000 packages.
  - Libraries are in .Dll format we can call these libraries in other applications.
+CLR :
+ -Handle running apps and manages other system services(garbage collections, & security & exception Handling)
 
 ----Net --------
  1.Net FrameWork 
@@ -39,6 +42,86 @@ Dot Net Framework Main Objectives:
  -Supports pure OOPs concepts
  -Supports to work with databases with the help of ADO.NET
  -Supports to develop game programming with the help of multi-threading
+
+
+03-11-2022
+
+Tools to develop Certain type Of Apps:
+ -Languages : 
+    -Webforms : Used to design form based applications Windows.
+    -Asp.Net  :For Model basedd Apps.
+    -ADO.Net  :For Web Apps that provides Consistent Access To Data base.
+
+------------------------------.Net Web Project Structures -----------------
+Net Web Project Structures :
+ -ASP.NET is a free web framework for building great websites and web applications using HTML, CSS, and JavaScript.
+ -ASP.NET offers three frameworks for creating web applications: Web Forms, ASP.NET MVC, and ASP.NET Web Pages. All three frameworks
+  are stable and mature, and you can create great web applications with any of them.
+
+Advantages of a Web Forms-Based Web Application :
+ -It supports an event model that preserves state over HTTP, which benefits line-of-business Web application development. 
+ -It uses view state or server-based forms, which can make managing state information easier.
+ -It works well for small teams of Web developers and designers who want to take advantage of the large number of components
+  available for rapid application development.
+
+ASP.NET Web Forms :
+-----------------
+ -You can build dynamic websites using a familiar drag-and-drop, event-driven model. A design surface and hundreds
+  of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+ -How To Create a Web Form in Visual Studio :
+  1. Got to Vs.
+  2. Click on Create a new project.
+  3. Select Asp.net web application .net Frameworkand click on create.
+  4.select Empty template and check the webform checkbox or u can select webform template to create a webform application.
+-Runat Server : which is required for every server control.
+-On Click Event : when u create this even in .aspcx file it will create a method for that event in code behind.
+-Responce.Redirect("~/ ")
+-Asp.net webforms are event driven pages with server code, server events and server controls.
+-this uses master template which are a centralized file where you can
  
- 
+MVC :
+-----
+ -ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and that gives
+ you full control over markup for enjoyable, agile development. ASP.NET MVC includes many features that enable fast, TDD-friendly development
+ for creating sophisticated applications that use the latest web standards.
+Q.What is mvc pattern ?
+  -Mvc Application is divided into 3 major components.
+  1.Model
+  2.View
+  3.Controller
+
+Q.What is asp.Net Core Mvc ?
+  -it is a light weight, open source and highly tesstable presentation framework.
+
+Q.Functionalities in Mvc?
+  -
+
+Routing :
+ -ASP.NET Core MVC is built on top of ASP.NET Core's routing, a powerful URL-mapping component that lets you build applications that have 
+  comprehensible and searchable URLs.
+Eg: 
+  routes.MapRoute(name: "Default", template: "{controller=Home}/{action=Index}/{id?}");
+
+Model binding :
+ -ASP.NET Core MVC model binding converts client request data (form values, route data, query string parameters, HTTP headers)
+  into objects that the controller can handle.
+
+-The principles behind developing mvc ix seperation of Concerns.
+-seperation ensures that the business model is simplle to test.
+-Using the MVC pattern Controller select the view to be displayed to the user and supplies it with any model data it reqires
+  
+Advantages of an MVC-Based Web Application :
+ -It makes it easier to manage complexity by dividing an application into the model, the view, and the controller.
+ -It does not use view state or server-based forms. This makes the MVC framework ideal for developers who want full control over the 
+  behavior of an application.
+ -t works well for Web applications that are supported by large teams of developers and Web designers who need a high degree of control
+  over the application behavior.
+
+ASP.NET Web Pages :
+------------------
+ -ASP.NET Web Pages and the Razor syntax provide a fast, approachable, and lightweight way to combine server code with HTML to create dynamic web
+  content. Connect to databases, add video, link to social networking sites, and include many more features that help you create beautiful sites
+  that conform to the latest web standards.
+
+
 
