@@ -49,7 +49,7 @@ Dot Net Framework Main Objectives:
 Tools to develop Certain type Of Apps:
  -Languages : 
     -Webforms : Used to design form based applications Windows.
-    -Asp.Net  :For Model basedd Apps.
+    -Asp.Net  :For Model based Apps.
     -ADO.Net  :For Web Apps that provides Consistent Access To Data base.
 
 ------------------------------.Net Web Project Structures -----------------
@@ -75,7 +75,7 @@ ASP.NET Web Forms :
   4.select Empty template and check the webform checkbox or u can select webform template to create a webform application.
 -Runat Server : which is required for every server control.
 -On Click Event : when u create this even in .aspcx file it will create a method for that event in code behind.
--Responce.Redirect("~/ ")
+-Responce.Redirect("~/ ") :
 -Asp.net webforms are event driven pages with server code, server events and server controls.
 -this uses master template which are a centralized file where you can
  
@@ -91,10 +91,86 @@ Q.What is mvc pattern ?
   3.Controller
 
 Q.What is asp.Net Core Mvc ?
-  -it is a light weight, open source and highly tesstable presentation framework.
+  -it is a light weight, open source and highly testable presentation framework.
 
 Q.Functionalities in Mvc?
   -
+
+Components of MVC:
+------------------
+
+ Model Validation :
+ --------------
+ -Model validation occurs after model binding and reports errors where data doesn't conform to business rules. For example,
+  a 0 is entered in a field that expects a rating between 1 and 5.
+ Eg :
+   public async Task<IActionResult> OnPostAsync()
+    {
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    _context.Movies.Add(Movie);
+    await _context.SaveChangesAsync();
+
+    return RedirectToPage("./Index");
+    }
+
+ Built-in attributes :
+ [ValidateNever]: Indicates that a property or parameter should be excluded from validation.
+ [CreditCard]: Validates that the property has a credit card format. Requires jQuery Validation Additional Methods.
+ [Compare]: Validates that two properties in a model match.
+ [EmailAddress]: Validates that the property has an email format.
+ [Phone]: Validates that the property has a telephone number format.
+ [Range]: Validates that the property value falls within a specified range.
+ [RegularExpression]: Validates that the property value matches a specified regular expression.
+ [Required]: Validates that the field isn't null. See [Required] attribute for details about this attribute's behavior.
+ [StringLength]: Validates that a string property value doesn't exceed a specified length limit.
+ [Url]: Validates that the property has a URL format.
+ [Remote]: Validates input on the client by calling an action method on the server. See [Remote] attribute for details about this attribute's behavior.
+
+Dependecy Injection:
+ -ASP.NET Core is designed from scratch to support Dependency Injection. ASP.NET Core injects objects of dependency classes through constructor
+  or method by using built-in IoC container.
+ -The Dependency Injection pattern involves 3 types of classes.
+ 
+1.Client Class: The client class (dependent class) is a class which depends on the service class
+2.Service Class: The service class (dependency) is a class that provides service to the client class.
+3.Injector Class: The injector class injects the service class object into the client class.
+
+Types of Dependency Injection :
+ 1.Constructor Injection: In the constructor injection, the injector supplies the service (dependency) through the client class constructor.
+
+ 2.Property Injection: In the property injection (aka the Setter Injection), the injector supplies the dependency through a public property of the client class.
+
+ 3.Method Injection: In this type of injection, the client class implements an interface which declares the method(s) to supply the dependency and the injector 
+  uses this interface to supply the dependency to the client class.
+
+Filters :
+ -Filters allow us to run custom code before or after executing the action method. 
+ Filter Types :
+ -Authorization filters
+  The Authorization filters are executed first. This filter helps us to determine whether the user is authorized for the current request. It can short-circuit a
+  pipeline if a user is unauthorized for the current request. We can also create custom authorization filter.
+
+ -Resource filters
+  The Resource filters handle the request after authorization. It can run the code before and after the rest of the filter is executed. This executes before the model 
+  binding happens. It can be used to implement caching.
+
+ -Action filters
+  The Action filters run the code immediately before and after the controller action method is called. It can be used to perform any action before or after execution of
+  the controller action method. We can also manipulate the arguments passed into an action.
+
+ -Exception filters
+  The Exception filters are used to handle exception that occurred before anything written to the response body.
+ -Result filters
+ -The Result filters are used to run code before or after the execution of controller action results. They are executed only if the controller action method has been 
+  executed successfully.
+
+Areas :
+ -Areas provide a way to partition an ASP.NET Core Web app into smaller functional groups, each with its own set of Razor Pages, controllers, views, and models. 
+
 
 Routing :
  -ASP.NET Core MVC is built on top of ASP.NET Core's routing, a powerful URL-mapping component that lets you build applications that have 
@@ -106,16 +182,17 @@ Model binding :
  -ASP.NET Core MVC model binding converts client request data (form values, route data, query string parameters, HTTP headers)
   into objects that the controller can handle.
 
--The principles behind developing mvc ix seperation of Concerns.
--seperation ensures that the business model is simplle to test.
+-The principles behind developing mvc is seperation of Concerns.
+-seperation ensures that the business model is simple to test.
 -Using the MVC pattern Controller select the view to be displayed to the user and supplies it with any model data it reqires
   
 Advantages of an MVC-Based Web Application :
  -It makes it easier to manage complexity by dividing an application into the model, the view, and the controller.
  -It does not use view state or server-based forms. This makes the MVC framework ideal for developers who want full control over the 
   behavior of an application.
- -t works well for Web applications that are supported by large teams of developers and Web designers who need a high degree of control
+ -it works well for Web applications that are supported by large teams of developers and Web designers who need a high degree of control
   over the application behavior.
+
 
 ASP.NET Web Pages :
 ------------------
@@ -123,5 +200,35 @@ ASP.NET Web Pages :
   content. Connect to databases, add video, link to social networking sites, and include many more features that help you create beautiful sites
   that conform to the latest web standards.
 
+04-11-2022
+----------
+---------Asp.net Core Web Api-------
 
+Q.What is API?
+ -API stands for Application Programming Interface. It is an intermediate software agent that allows two or more applications to interact with
+  each other.
+ -In simple words, we can say that a web API is an application programming interface for a web application or web server. It uses HTTP protocol
+  to communicate between clients and websites to have data access. 
+ -Asp.net Core web API is a cross-platform web API.
 
+Q.Why is Web API required?
+ -The user wants to access the application from different devices like mobile, browser, Google devices, etc. In this case, Web API can be useful. 
+ -Different devices request to Web API and Web API will respond in JSON format. Most of the devices are able to understand JSON output. 
+ 
+Steps :
+ -A client called api/controller – In the above diagram Browers, Phones, and Google Devices are called Web API Controllers.
+ -api/Controller interact with business layer and get Data from DB.
+ -The output will be returned in JSON format.
+
+Q.How to create an Asp.Net core web API?
+ -Open Visual Studio 2022 and create a new project.
+ -Select the “Asp.Net Core Web API” template and click on Next.
+ -Select Target Framework and click on Create button.
+
+-Web API is mostly used for CRED (Create, Read, EDIT, DELETE) operations. It  follows HTTP verbs for these operations.
+ -HTTP GET – Read Operation
+ -HTTP POST – Create Operation
+ -HTTP PUT – Update Operation
+ -HTTP DELETE – Delete Operation
+
+I Created Application ASP .Net COre Web Api and Done Some Crud Operations.
